@@ -22,30 +22,17 @@ function activate(context) {
 		// console.log(args)
 		let selections = vscode.window.activeTextEditor.selections[0]
 		let document = vscode.window.activeTextEditor.document
-		console.log(selections)
-		console.log(document.getText())
+		let word = document.getText(selections)
 
+		if(validateComponentName(word)){
+			vscode.window.showInformationMessage('大佬你选中了'+ word);
+		} else {
+			vscode.window.showInformationMessage('原生标签，你选给鸡');
+		}
 		// Display a message box to the user
-		vscode.window.showInformationMessage('123123');
 	});
 	
-	let vuetag = vscode.languages.registerDefinitionProvider(['vue'], {
-		provideDefinition(document, position) {
-			console.log(document.getWordRangeAtPosition(position))
-			const fileName    = document.fileName;
-			const workDir     = path.dirname(fileName);
-			const word        = document.getText(document.getWordRangeAtPosition(position));
-			// console.log('====== 进入 provideDefinition 方法 ======');
-			// console.log('fileName: ' + fileName); // 当前文件完整路径
-			// console.log('workDir: ' + workDir); // 当前文件所在目录
-			// console.log('word: ' + word)
-	
-			if(validateComponentName(word)){
-			}
-		}
-	})
-	
-	context.subscriptions.push(disposable,vuetag);
+	context.subscriptions.push(disposable);
 }
 exports.activate = activate;
 
