@@ -16,10 +16,19 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
+				"command": "extension.vuepath",
+				"title": "我日你mmp"
 			}
-		]
+		],
+		"menus": {
+			"editor/context": [
+				{
+						"when": "resourceLangId == vue && editorHasSelection",
+						"command": "extension.vuepath",
+						"group": "navigation@2"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"postinstall": "node ./node_modules/vscode/bin/install",
