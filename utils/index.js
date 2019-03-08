@@ -19,7 +19,7 @@ function readDir(path, word) {
       if (stat.isFile()) {
         var fpath = path.split(sep);
         if (patha.extname(fpath[fpath.length - 1]) === '.vue') {
-          if(fpath[fpath.length - 1] == VueComponent || fpath[fpath.length - 1] == vue_component) {
+          if (fpath[fpath.length - 1] == VueComponent || fpath[fpath.length - 1] == vue_component) {
             filePath = path.split('\\').join('/')
           }
         }

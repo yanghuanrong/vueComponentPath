@@ -18,7 +18,7 @@
 		"commands": [
 			{
 				"command": "extension.vuepath",
-				"title": "我日你mmp"
+				"title": "组件路径"
 			}
 		],
 		"menus": {
