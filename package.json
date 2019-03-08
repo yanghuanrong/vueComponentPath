@@ -10,7 +10,8 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onLanguage:vue"
+		"onLanguage:vue",
+		"onCommand: extension.vuepath"
 	],
 	"main": "./extension.js",
 	"contributes": {
